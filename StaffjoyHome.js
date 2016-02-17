@@ -11,7 +11,7 @@ var StaffjoyHome = React.createClass({
 
   getInitialState() {
     return {
-      url: 'https://www.staffjoy.com'
+      url: 'https://www.staffjoy.com/auth/native'
     };
   },
 
