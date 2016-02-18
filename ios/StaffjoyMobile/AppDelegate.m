@@ -50,14 +50,12 @@
 
   NSMutableDictionary *props = [NSMutableDictionary dictionary];
 
-#if DEBUG
   NSString *debugRootURLStr = [[NSUserDefaults standardUserDefaults] objectForKey:@"base_url_preference"];
   NSURL *debugRootURL = [NSURL URLWithString:debugRootURLStr];
   if (debugRootURL)
   {
     props[@"baseUrl"] = [debugRootURL absoluteString];
   }
-#endif
   
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
                                                       moduleName:@"StaffjoyMobile"

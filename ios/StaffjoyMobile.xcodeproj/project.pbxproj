@@ -21,8 +21,20 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
-		5016A2CD1C74419F00E321AE /* Info-debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5016A2CB1C74419F00E321AE /* Info-debug.plist */; };
-		5016A2CE1C74419F00E321AE /* Info-release.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5016A2CC1C74419F00E321AE /* Info-release.plist */; };
+		5016A2D11C758DC200E321AE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
+		5016A2D21C758DC200E321AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		5016A2D41C758DC200E321AE /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
+		5016A2D51C758DC200E321AE /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
+		5016A2D61C758DC200E321AE /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
+		5016A2D71C758DC200E321AE /* libRCTImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302C01ABCB91800DB3ED1 /* libRCTImage.a */; };
+		5016A2D81C758DC200E321AE /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
+		5016A2D91C758DC200E321AE /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
+		5016A2DA1C758DC200E321AE /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
+		5016A2DB1C758DC200E321AE /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		5016A2DC1C758DC200E321AE /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
+		5016A2DD1C758DC200E321AE /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
+		5016A2DF1C758DC200E321AE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		5016A2E01C758DC200E321AE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +139,7 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		5016A2CB1C74419F00E321AE /* Info-debug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Info-debug.plist"; path = "StaffjoyMobile/Info-debug.plist"; sourceTree = "<group>"; };
 		5016A2CC1C74419F00E321AE /* Info-release.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Info-release.plist"; path = "StaffjoyMobile/Info-release.plist"; sourceTree = "<group>"; };
+		5016A2E61C758DC200E321AE /* Staffjoy Release.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Staffjoy Release.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50F323B51C743D03009A2AE4 /* Settings-debug.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "Settings-debug.bundle"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
@@ -154,6 +167,23 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5016A2D31C758DC200E321AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5016A2D41C758DC200E321AE /* libReact.a in Frameworks */,
+				5016A2D51C758DC200E321AE /* libRCTActionSheet.a in Frameworks */,
+				5016A2D61C758DC200E321AE /* libRCTGeolocation.a in Frameworks */,
+				5016A2D71C758DC200E321AE /* libRCTImage.a in Frameworks */,
+				5016A2D81C758DC200E321AE /* libRCTLinking.a in Frameworks */,
+				5016A2D91C758DC200E321AE /* libRCTNetwork.a in Frameworks */,
+				5016A2DA1C758DC200E321AE /* libRCTSettings.a in Frameworks */,
+				5016A2DB1C758DC200E321AE /* libRCTText.a in Frameworks */,
+				5016A2DC1C758DC200E321AE /* libRCTVibration.a in Frameworks */,
+				5016A2DD1C758DC200E321AE /* libRCTWebSocket.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +337,7 @@
 			children = (
 				13B07F961A680F5B00A75B9A /* StaffjoyMobile.app */,
 				00E356EE1AD99517003FC87E /* StaffjoyMobileTests.xctest */,
+				5016A2E61C758DC200E321AE /* Staffjoy Release.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -332,9 +363,9 @@
 			productReference = 00E356EE1AD99517003FC87E /* StaffjoyMobileTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* StaffjoyMobile */ = {
+		13B07F861A680F5B00A75B9A /* Staffjoy Dev */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "StaffjoyMobile" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Staffjoy Dev" */;
 			buildPhases = (
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
@@ -346,9 +377,27 @@
 			);
 			dependencies = (
 			);
-			name = StaffjoyMobile;
+			name = "Staffjoy Dev";
 			productName = "Hello World";
 			productReference = 13B07F961A680F5B00A75B9A /* StaffjoyMobile.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5016A2CF1C758DC200E321AE /* Staffjoy Release */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5016A2E31C758DC200E321AE /* Build configuration list for PBXNativeTarget "Staffjoy Release" */;
+			buildPhases = (
+				5016A2D01C758DC200E321AE /* Sources */,
+				5016A2D31C758DC200E321AE /* Frameworks */,
+				5016A2DE1C758DC200E321AE /* Resources */,
+				5016A2E11C758DC200E321AE /* Bundle React Native code and images */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Staffjoy Release";
+			productName = "Hello World";
+			productReference = 5016A2E61C758DC200E321AE /* Staffjoy Release.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -424,7 +473,8 @@
 			);
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* StaffjoyMobile */,
+				13B07F861A680F5B00A75B9A /* Staffjoy Dev */,
+				5016A2CF1C758DC200E321AE /* Staffjoy Release */,
 				00E356ED1AD99517003FC87E /* StaffjoyMobileTests */,
 			);
 		};
@@ -515,10 +565,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5016A2CD1C74419F00E321AE /* Info-debug.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				5016A2CE1C74419F00E321AE /* Info-release.plist in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5016A2DE1C758DC200E321AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5016A2DF1C758DC200E321AE /* Images.xcassets in Resources */,
+				5016A2E01C758DC200E321AE /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,7 +607,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"${CONFIGURATION}\" == \"Debug\" ]; then\n    rm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Settings.bundle\"\n    cp -r \"${PROJECT_DIR}/Settings-debug.bundle\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Settings.bundle\"\n    touch \"${PROJECT_DIR}/${PROJECT_NAME}/main.m\"\nfi";
+			shellScript = "rm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Settings.bundle\"\ncp -r \"${PROJECT_DIR}/Settings-debug.bundle\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Settings.bundle\"\ntouch \"${PROJECT_DIR}/${PROJECT_NAME}/main.m\"";
+		};
+		5016A2E11C758DC200E321AE /* Bundle React Native code and images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle React Native code and images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/packager/react-native-xcode.sh";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -572,12 +643,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5016A2D01C758DC200E321AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5016A2D11C758DC200E321AE /* AppDelegate.m in Sources */,
+				5016A2D21C758DC200E321AE /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* StaffjoyMobile */;
+			target = 13B07F861A680F5B00A75B9A /* Staffjoy Dev */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -666,6 +746,33 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../node_modules/react-native/React/**",
+				);
+				INFOPLIST_FILE = "StaffjoyMobile/Info-debug.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jballer.consulting.StaffjoyMobileDemo;
+				PRODUCT_NAME = StaffjoyMobile;
+				SJ_USE_REACT_SERVER = "";
+			};
+			name = Release;
+		};
+		5016A2E41C758DC200E321AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEAD_CODE_STRIPPING = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					"SJ_USE_REACT_SERVER=1",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -674,8 +781,29 @@
 				INFOPLIST_FILE = "StaffjoyMobile/Info-release.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jballer.consulting.StaffjoyMobileDemo;
-				PRODUCT_NAME = StaffjoyMobile;
+				PRODUCT_BUNDLE_IDENTIFIER = com.staffjoy.app.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SJ_USE_REACT_SERVER = "";
+			};
+			name = Debug;
+		};
+		5016A2E51C758DC200E321AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../node_modules/react-native/React/**",
+				);
+				INFOPLIST_FILE = "StaffjoyMobile/Info-release.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.staffjoy.app.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SJ_USE_REACT_SERVER = "";
 			};
 			name = Release;
@@ -749,6 +877,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -779,11 +908,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "StaffjoyMobile" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Staffjoy Dev" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
 				13B07F951A680F5B00A75B9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5016A2E31C758DC200E321AE /* Build configuration list for PBXNativeTarget "Staffjoy Release" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5016A2E41C758DC200E321AE /* Debug */,
+				5016A2E51C758DC200E321AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
