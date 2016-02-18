@@ -13,8 +13,12 @@ var StaffjoyHome = require('./StaffjoyHome');
 class StaffjoyMobile extends Component {
 
   render() {
+
+    var baseUrl = this.props.baseUrl || 'https://www.staffjoy.com';
+    baseUrl = baseUrl.replace(/\/?$/, ''); // remove trailing slash
+
     return (
-      <StaffjoyHome />
+      <StaffjoyHome source={baseUrl + '/auth/native'}/>
     );
   }
 }

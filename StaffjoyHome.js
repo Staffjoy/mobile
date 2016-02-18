@@ -9,18 +9,12 @@ import React, {
 
 var StaffjoyHome = React.createClass({
 
-  getInitialState() {
-    return {
-      url: 'https://www.staffjoy.com/auth/native'
-    };
-  },
-
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.statusBarBackground} />
         <WebView
-          url={this.state.url}
+          url={this.props.source}
           style={styles.web}
         />
       </View>
