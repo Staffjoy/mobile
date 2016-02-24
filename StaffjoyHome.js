@@ -14,8 +14,7 @@ function runOnEachPage() {
   var url = document.location.href;
 
   var REDIRECTS = {
-    '/': '/auth/native',
-    '/auth/login': '/auth/native',
+    // not yet used
   };
 
   if (url.startsWith(this.state.baseURL)) {
