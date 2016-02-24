@@ -22,7 +22,7 @@
    *
    */
   
-#if TARGET_OS_SIMULATOR
+#if DEBUG && TARGET_OS_SIMULATOR
   
   /** OPTION 1
    * Load from development server. Start the server from the repository root:
