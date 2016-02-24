@@ -1,7 +1,7 @@
 import React, {
   Alert,
   Component,
-  // Linking,
+  Linking,
   Platform,
   StyleSheet,
   Text,
@@ -81,7 +81,7 @@ var StaffjoyHome = React.createClass({
     let url = event.nativeEvent.jsEvaluationValue;
     if (url !== undefined && url !== '')
     {
-      Alert.alert('External URL', 'I should be opening ' + url + ' in an external browser right about now!');
+      Linking.openURL(url).catch(err => console.error('Unable to open url (' + url + ')', err));
     }
   }
 
