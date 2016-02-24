@@ -37,9 +37,9 @@ var StaffjoyHome = React.createClass({
     var baseURL;
     let defaultPath = '/auth/native';
 
-    if (this.props.baseURL) {
+    if (this.props.source) {
       // remove trailing slash if present
-      baseURL = this.props.baseURL.replace(/\/?$/, '');
+      baseURL = this.props.source.replace(/\/?$/, '');
     }
     else {
       baseURL = 'https://www.staffjoy.com';
