@@ -414,7 +414,10 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = 82X2ZXPDAG;
+						DevelopmentTeam = UWYS283234;
+					};
+					5016A2CF1C758DC200E321AE = {
+						DevelopmentTeam = UWYS283234;
 					};
 				};
 			};
@@ -734,7 +737,7 @@
 				INFOPLIST_FILE = "StaffjoyMobile/Info-debug.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jballer.consulting.StaffjoyMobileDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.staffjoy.dev.mobile;
 				PRODUCT_NAME = StaffjoyMobile;
 				SJ_USE_REACT_SERVER = "";
 			};
@@ -755,7 +758,7 @@
 				INFOPLIST_FILE = "StaffjoyMobile/Info-debug.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jballer.consulting.StaffjoyMobileDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.staffjoy.dev.mobile;
 				PRODUCT_NAME = StaffjoyMobile;
 				SJ_USE_REACT_SERVER = "";
 			};
@@ -781,7 +784,7 @@
 				INFOPLIST_FILE = "StaffjoyMobile/Info-release.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.staffjoy.app.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = com.staffjoy.mobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SJ_USE_REACT_SERVER = "";
 			};
@@ -802,7 +805,7 @@
 				INFOPLIST_FILE = "StaffjoyMobile/Info-release.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.staffjoy.app.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = com.staffjoy.mobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SJ_USE_REACT_SERVER = "";
 			};
