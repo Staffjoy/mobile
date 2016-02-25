@@ -18,7 +18,7 @@ class StaffjoyMobile extends Component {
     baseUrl = baseUrl.replace(/\/?$/, ''); // remove trailing slash
 
     return (
-      <StaffjoyHome source={baseUrl + '/auth/native'}/>
+      <StaffjoyHome source={baseUrl} />
     );
   }
 }
