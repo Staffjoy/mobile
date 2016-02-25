@@ -53,12 +53,21 @@ var StaffjoyHome = React.createClass({
     }
   },
 
+  headers() {
+    return {
+      uri: this.props.source,
+      headers: {
+        'X-Staffjoy-Native': Platform.OS
+      }
+    }
+  },
+
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.statusBarBackground} />
         <WebView
-          source={{uri: this.props.source, headers: {'X-App-Id': 'Staffjoy Native Mobile'}}}
+          source={this.headers()}
           style={styles.web}
           onLoad={this.onLoad}
           injectedJavaScript={this.javaScriptToInject()}
