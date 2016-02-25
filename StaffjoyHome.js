@@ -25,6 +25,7 @@ function runOnEachPage() {
     }
   }
   else {
+    console.dir({url:url, baseURL: this.state.baseURL})
     window.history.back();
     url;
   }
@@ -81,7 +82,6 @@ var StaffjoyHome = React.createClass({
     let fn = runOnEachPage.toString();
     fn = fn.replace(RegExp('this.state.baseURL', 'g'), '\'' + this.state.baseURL + '\'');
     fn = fn.replace(/^[^{]*{\s*/,'').replace(/\s*}[^}]*$/,'');
-    // fn += '\nrunOnEachPage();';
     return fn;
   },
 
