@@ -3,7 +3,7 @@
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "Spotlight@2x.png",
+      "filename" : "Settings@2x.png",
       "scale" : "2x"
     },
     {
@@ -15,7 +15,7 @@
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "Spotlight@2x-1.png",
+      "filename" : "Spotlight@2x.png",
       "scale" : "2x"
     },
     {
@@ -34,11 +34,6 @@
       "size" : "60x60",
       "idiom" : "iphone",
       "filename" : "App Icon@3x.png",
-      "scale" : "3x"
-    },
-    {
-      "idiom" : "car",
-      "size" : "60x60",
       "scale" : "3x"
     }
   ],
