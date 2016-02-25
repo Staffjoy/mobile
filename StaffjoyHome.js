@@ -56,7 +56,7 @@ var StaffjoyHome = React.createClass({
 
   headers() {
     return {
-      uri: this.props.source,
+      uri: this.state.url,
       headers: {
         'X-Staffjoy-Native': Platform.OS
       }
