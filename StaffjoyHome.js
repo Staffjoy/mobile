@@ -71,6 +71,8 @@ var StaffjoyHome = React.createClass({
           source={this.headers()}
           style={styles.web}
           onLoad={this.onLoad}
+          javaScriptEnabled={true}
+          domStorageEnabled={true}
           injectedJavaScript={this.javaScriptToInject()}
           onShouldStartLoadWithRequest={this.onShouldStartLoadWithRequest}
         />
