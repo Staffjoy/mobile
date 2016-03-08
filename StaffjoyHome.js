@@ -42,7 +42,7 @@ var StaffjoyHome = React.createClass({
       baseURL = this.props.source.replace(/\/?$/, '');
     }
     else {
-      baseURL = 'https://www.staffjoy.com';
+      baseURL = __DEV__ ? 'http://dev.staffjoy.com' : 'https://www.staffjoy.com';
     }
 
     let url = baseURL + defaultPath;
