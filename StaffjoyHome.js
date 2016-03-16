@@ -5,9 +5,12 @@ import React, {
   Platform,
   StyleSheet,
   Text,
+  TouchableOpacity,
   View,
   WebView
 } from 'react-native';
+
+var WEBVIEW_REF = 'webview';
 
 function runOnEachPage() {
 
@@ -50,7 +53,8 @@ var StaffjoyHome = React.createClass({
     return {
       baseURL: baseURL,
       defaultPath: defaultPath,
-      url: url
+      url: url,
+      error: false
     }
   },
 
@@ -68,14 +72,28 @@ var StaffjoyHome = React.createClass({
       <View style={styles.container}>
         <View style={styles.statusBarBackground} />
         <WebView
+          ref={WEBVIEW_REF}
           source={this.headers()}
           style={styles.web}
           onLoad={this.onLoad}
+          onError={this.onError}
+          onNavigationStateChange={this.onNavigationStateChange}
           javaScriptEnabled={true}
           domStorageEnabled={true}
+          //renderError={this.renderError}
+          startInLoadingState={true}
           injectedJavaScript={this.javaScriptToInject()}
           onShouldStartLoadWithRequest={this.onShouldStartLoadWithRequest}
         />
+        <TouchableOpacity onPress={this.reload} style={
+          (this.state.error ? {flex: 1} : undefined)
+        }>
+          <View style={{
+            backgroundColor:'red',
+            height:(this.state.error ? 100 : undefined),
+            width:100
+          }} />
+        </TouchableOpacity>
       </View>
     );
   },
@@ -88,11 +106,51 @@ var StaffjoyHome = React.createClass({
   },
 
   onLoad(event) {
+
+    this.setState({
+      error: false,
+      lastSuccessfulUrl: event.url
+    });
+
     let url = event.nativeEvent.jsEvaluationValue;
     if (url !== undefined && url !== '')
     {
       Linking.openURL(url).catch(err => console.error('Unable to open url (' + url + ')', err));
     }
+  },
+
+  onError(event) {
+    console.log("onError: " + event);
+    this.setState({
+      error: true
+    });
+  },
+
+  onNavigationStateChange: function(navState) {
+    // this.setState({
+    //   url: navState.url
+    // });
+  },
+
+  renderError(event) {
+    return (
+      <TouchableOpacity onPress={this.reload}>
+        <View style={{
+          backgroundColor:'red',
+          height:100,
+          width:100
+        }} />
+      </TouchableOpacity>
+    );
+  },
+
+  reload() {
+    // this.setState({
+    //   error: false,
+    //   url: this.state.lastSuccessfulUrl || this.getInitialState().url
+    // })
+    this.refs[WEBVIEW_REF].reload();
+    // this.setState(this.getInitialState());
   }
 
 });
@@ -115,3 +173,4 @@ var styles = StyleSheet.create({
 });
 
 module.exports = StaffjoyHome;
+s = StaffjoyHome;
