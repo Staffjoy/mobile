@@ -76,24 +76,14 @@ var StaffjoyHome = React.createClass({
           source={this.headers()}
           style={styles.web}
           onLoad={this.onLoad}
-          onError={this.onError}
           onNavigationStateChange={this.onNavigationStateChange}
           javaScriptEnabled={true}
           domStorageEnabled={true}
-          //renderError={this.renderError}
+          renderError={this.renderError}
           startInLoadingState={true}
           injectedJavaScript={this.javaScriptToInject()}
           onShouldStartLoadWithRequest={this.onShouldStartLoadWithRequest}
         />
-        <TouchableOpacity onPress={this.reload} style={
-          (this.state.error ? {flex: 1} : undefined)
-        }>
-          <View style={{
-            backgroundColor:'red',
-            height:(this.state.error ? 100 : undefined),
-            width:100
-          }} />
-        </TouchableOpacity>
       </View>
     );
   },
@@ -119,28 +109,22 @@ var StaffjoyHome = React.createClass({
     }
   },
 
-  onError(event) {
-    console.log("onError: " + event);
-    this.setState({
-      error: true
-    });
-  },
-
   onNavigationStateChange: function(navState) {
     // this.setState({
     //   url: navState.url
     // });
   },
 
-  renderError(event) {
+  renderError(errorDomain, errorCode, errorDesc) {
     return (
-      <TouchableOpacity onPress={this.reload}>
-        <View style={{
-          backgroundColor:'red',
-          height:100,
-          width:100
-        }} />
-      </TouchableOpacity>
+      <View style={styles.error}>
+        <Text style={styles.h1}>Oops!</Text>
+        <Text style={styles.body}> There was an error loading the page.</Text>
+        <Text style={errorDesc && styles.errorDescription}>{errorDesc}</Text>
+        <TouchableOpacity style={styles.button}>
+          <Text style={{color:'white'}} onPress={this.reload}>Try Again</Text>
+        </TouchableOpacity>
+      </View>
     );
   },
 
@@ -169,6 +153,31 @@ var styles = StyleSheet.create({
   },
   web: {
     flex: 1
+  },
+  error: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  h1: {
+    fontStyle: 'italic',
+    fontWeight: 'bold',
+    fontSize: 16,
+    padding: 8
+  },
+  errorDescription: {
+    fontFamily: 'Helvetica',
+    backgroundColor: '#ddd',
+    margin: 16,
+    padding: 8
+  },
+  button: {
+    backgroundColor: '#48B7AB',
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 12,
+    borderRadius: 3
   }
 });
 
