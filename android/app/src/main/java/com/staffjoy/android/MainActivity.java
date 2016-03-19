@@ -1,4 +1,4 @@
-package com.staffjoymobile;
+package com.staffjoy.android;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

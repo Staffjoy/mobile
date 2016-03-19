@@ -1,4 +1,4 @@
-package com.staffjoymobile;
+package com.staffjoy.android;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactPackage;
