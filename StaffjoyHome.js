@@ -95,24 +95,18 @@ var StaffjoyHome = React.createClass({
     return fn;
   },
 
-  onLoad(event) {
-
+  onNavigationStateChange(navState) {
     this.setState({
-      error: false,
-      lastSuccessfulUrl: event.url
+      lastSuccessfulUrl: navState.url
     });
+  },
 
+  onLoad(event) {
     let url = event.nativeEvent.jsEvaluationValue;
     if (url !== undefined && url !== '')
     {
       Linking.openURL(url).catch(err => console.error('Unable to open url (' + url + ')', err));
     }
-  },
-
-  onNavigationStateChange: function(navState) {
-    // this.setState({
-    //   url: navState.url
-    // });
   },
 
   renderError(errorDomain, errorCode, errorDesc) {
@@ -129,12 +123,7 @@ var StaffjoyHome = React.createClass({
   },
 
   reload() {
-    // this.setState({
-    //   error: false,
-    //   url: this.state.lastSuccessfulUrl || this.getInitialState().url
-    // })
     this.refs[WEBVIEW_REF].reload();
-    // this.setState(this.getInitialState());
   }
 
 });
@@ -182,4 +171,3 @@ var styles = StyleSheet.create({
 });
 
 module.exports = StaffjoyHome;
-s = StaffjoyHome;
