@@ -1,0 +1,28 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, '8.0'
+# Uncomment this line if you're using Swift
+# use_frameworks!
+
+def common_deps
+  # Use the code that was installed by npm
+  pod 'React', :path => '../node_modules/react-native', :subspecs => [
+    'Core',
+    'RCTImage',
+    'RCTNetwork',
+    'RCTText',
+    'RCTWebSocket',
+    # Add any other subspecs you want to use in your project
+  ]
+end
+
+target 'Staffjoy Dev' do
+  common_deps
+end
+
+target 'Staffjoy Release' do
+  common_deps
+end
+
+target 'StaffjoyMobileTests' do
+  common_deps
+end
