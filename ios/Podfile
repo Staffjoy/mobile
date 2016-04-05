@@ -11,6 +11,7 @@ def common_deps
     'RCTNetwork',
     'RCTText',
     'RCTWebSocket',
+    'RCTLinkingIOS',
     # Add any other subspecs you want to use in your project
   ]
 end

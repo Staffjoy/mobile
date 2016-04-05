@@ -1,6 +1,7 @@
 import React, {
   Alert,
   Component,
+  LayoutAnimation,
   Linking,
   Platform,
   StyleSheet,
@@ -11,41 +12,18 @@ import React, {
 } from 'react-native';
 
 var WEBVIEW_REF = 'webview';
-
-function runOnEachPage() {
-
-  var url = document.location.href;
-
-  var REDIRECTS = {
-    // not yet used
-  };
-
-  if (url.startsWith(this.state.baseURL)) {
-    let path = url.substring(this.state.baseURL.length);
-    let redirect = REDIRECTS[path]
-    if (redirect !== undefined) {
-      document.location.href = redirect;
-    }
-  }
-  else {
-    console.dir({url:url, baseURL: this.state.baseURL})
-    window.history.back();
-    url;
-  }
-}
+let NAVBAR_HEIGHT = 44;
 
 var StaffjoyHome = React.createClass({
 
   getInitialState() {
     var baseURL;
+    let defaultBaseURL = __DEV__ ? 'http://dev.staffjoy.com' : 'https://www.staffjoy.com';
     let defaultPath = '/auth/native';
 
     if (this.props.source) {
-      // remove trailing slash if present
+      // removes trailing slash if present
       baseURL = this.props.source.replace(/\/?$/, '');
-    }
-    else {
-      baseURL = __DEV__ ? 'http://dev.staffjoy.com' : 'https://www.staffjoy.com';
     }
 
     let url = baseURL + defaultPath;
@@ -54,14 +32,11 @@ var StaffjoyHome = React.createClass({
       baseURL: baseURL,
       defaultPath: defaultPath,
       url: url,
-      error: false
-    }
-  },
-
-  headers() {
-    return {
-      uri: this.state.url,
-      headers: {
+      navBarHeight: 0,
+      navBarAlpha: 0,
+      canGoBack: false,
+      canGoForward: false,
+      customHeaders: {
         'X-Staffjoy-Native': Platform.OS
       }
     }
@@ -71,42 +46,57 @@ var StaffjoyHome = React.createClass({
     return (
       <View style={styles.container}>
         <View style={styles.statusBarBackground} />
+        <View style={{height: this.state.navBarHeight, overflow: 'hidden'}}>
+          <View style={[styles.navBar, {height: NAVBAR_HEIGHT}]}>
+            <TouchableOpacity style={styles.navButton} activeOpacity={this.state.navBarAlpha} onPress={this.goBack} disabled={!this.state.canGoBack}>
+              <Text style={this.state.canGoBack ? styles.navButtonText : styles.navButtonDisabledText}>&lt;</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.navButton} activeOpacity={this.state.navBarAlpha} onPress={this.goForward} disabled={!this.state.canGoForward}>
+              <Text style={this.state.canGoForward ? styles.navButtonText : styles.navButtonDisabledText}>&gt;</Text>
+            </TouchableOpacity>
+            <Text onPress={this.toggleNav} style={{height: NAVBAR_HEIGHT/2, opacity: 0.5, flex:1, backgroundColor:'lightgray', paddingLeft: 10, paddingRight: 10}}>{this.state.url}</Text>
+            <TouchableOpacity style={styles.navButton} onPress={this.openInBrowser}>
+              <Text style={styles.navButtonText}>📲</Text>
+            </TouchableOpacity>
+            <View style={{width: 20}} />
+          </View>
+        </View>
         <WebView
           ref={WEBVIEW_REF}
-          source={this.headers()}
+          source={{
+            uri: this.state.url,
+            headers: this.state.customHeaders
+          }}
           style={styles.web}
-          onLoad={this.onLoad}
           onNavigationStateChange={this.onNavigationStateChange}
           javaScriptEnabled={true}
           domStorageEnabled={true}
           renderError={this.renderError}
           startInLoadingState={true}
-          injectedJavaScript={this.javaScriptToInject()}
-          onShouldStartLoadWithRequest={this.onShouldStartLoadWithRequest}
         />
       </View>
     );
   },
 
-  javaScriptToInject() {
-    let fn = runOnEachPage.toString();
-    fn = fn.replace(RegExp('this.state.baseURL', 'g'), '\'' + this.state.baseURL + '\'');
-    fn = fn.replace(/^[^{]*{\s*/,'').replace(/\s*}[^}]*$/,'');
-    return fn;
-  },
-
   onNavigationStateChange(navState) {
     this.setState({
-      lastSuccessfulUrl: navState.url
+      url: navState.url,
+      canGoBack: navState.canGoBack,
+      canGoForward: navState.canGoForward
     });
+
+    let isOnStaffjoySite = navState.url.indexOf(this.state.baseURL) != -1;
+
+    // Animated.spring(this.state.navBarHeight, {
+    //   toValue: isOnStaffjoySite ? 0 : NAVBAR_HEIGHT
+    // });
   },
 
-  onLoad(event) {
-    let url = event.nativeEvent.jsEvaluationValue;
-    if (url !== undefined && url !== '')
-    {
-      Linking.openURL(url).catch(err => console.error('Unable to open url (' + url + ')', err));
-    }
+  toggleNav() {
+    // this.state.showNav = !this.state.showNav;
+    // Animated.spring(this.state.navBarHeight, {
+    //   toValue: this.state.showNav ? 0 : NAVBAR_HEIGHT
+    // });
   },
 
   renderError(errorDomain, errorCode, errorDesc) {
@@ -122,8 +112,40 @@ var StaffjoyHome = React.createClass({
     );
   },
 
+  openInBrowser() {
+    Linking.openURL(this.state.url).catch(err => console.error('Unable to open url (' + url + ')', err));
+  },
+
+  goBack() {
+    this.refs[WEBVIEW_REF].goBack();
+  },
+
+  goForward() {
+    this.refs[WEBVIEW_REF].goForward();
+  },
+
   reload() {
-    this.refs[WEBVIEW_REF].reload();
+    // this.setState({showNav: !this.state.showNav});
+
+    // let toValue = this.state.showNav ? NAVBAR_HEIGHT : 0;
+
+    // LayoutAnimation.linear();
+
+    let config = LayoutAnimation.create(
+      300, LayoutAnimation.Types.easeInEaseOut, LayoutAnimation.Properties.opacity
+    );
+    LayoutAnimation.configureNext(config);
+
+    this.setState({
+      navBarHeight: this.state.navBarHeight ? 0 : NAVBAR_HEIGHT,
+      navBarAlpha: this.state.navBarAlpha ? 0 : 1
+    });
+
+    // LayoutAnimation.linear();
+    // Animated.spring(this.state.navBarHeight, {
+    //   toValue: 44
+    // }).start();
+    // this.refs[WEBVIEW_REF].reload();
   }
 
 });
@@ -139,6 +161,28 @@ var styles = StyleSheet.create({
   statusBarBackground: {
     height: Platform.OS === 'ios' ? 20 : 0,
     backgroundColor: 'white'
+  },
+  navBar: {
+    backgroundColor: 'white',
+    flexDirection: 'row',
+    alignItems: 'center',
+    overflow: 'hidden'
+  },
+  navButton: {
+    height: NAVBAR_HEIGHT,
+    margin: 8,
+    padding: 8,
+    alignItems: 'center'
+  },
+  navButtonText: {
+    color: '#48B7AB',
+    fontSize: 24
+  },
+  navButtonDisabledText: {
+    color: '#48B7AB',
+    opacity: 0.4,
+    backgroundColor: 'transparent',
+    fontSize: 24
   },
   web: {
     flex: 1

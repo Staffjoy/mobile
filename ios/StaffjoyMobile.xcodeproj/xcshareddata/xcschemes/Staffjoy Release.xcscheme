@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "StaffjoyMobile.app"
-               BlueprintName = "Staffjoy Dev"
-               ReferencedContainer = "container:StaffjoyMobile.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "StaffjoyMobileTests.xctest"
-               BlueprintName = "StaffjoyMobileTests"
+               BlueprintIdentifier = "50C588F11CA8DD8900F104AA"
+               BuildableName = "Staffjoy Release.app"
+               BlueprintName = "Staffjoy Release"
                ReferencedContainer = "container:StaffjoyMobile.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -42,23 +28,13 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "StaffjoyMobileTests.xctest"
-               BlueprintName = "StaffjoyMobileTests"
-               ReferencedContainer = "container:StaffjoyMobile.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "StaffjoyMobile.app"
-            BlueprintName = "Staffjoy Dev"
+            BlueprintIdentifier = "50C588F11CA8DD8900F104AA"
+            BuildableName = "Staffjoy Release.app"
+            BlueprintName = "Staffjoy Release"
             ReferencedContainer = "container:StaffjoyMobile.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -79,9 +55,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "StaffjoyMobile.app"
-            BlueprintName = "Staffjoy Dev"
+            BlueprintIdentifier = "50C588F11CA8DD8900F104AA"
+            BuildableName = "Staffjoy Release.app"
+            BlueprintName = "Staffjoy Release"
             ReferencedContainer = "container:StaffjoyMobile.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -98,9 +74,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "StaffjoyMobile.app"
-            BlueprintName = "Staffjoy Dev"
+            BlueprintIdentifier = "50C588F11CA8DD8900F104AA"
+            BuildableName = "Staffjoy Release.app"
+            BlueprintName = "Staffjoy Release"
             ReferencedContainer = "container:StaffjoyMobile.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
