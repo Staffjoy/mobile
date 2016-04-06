@@ -53,7 +53,7 @@
   NSURL *debugRootURL = [NSURL URLWithString:debugRootURLStr];
   if (debugRootURL)
   {
-    props[@"baseUrl"] = [debugRootURL absoluteString];
+    props[@"baseURL"] = [debugRootURL absoluteString];
   }
   
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation

@@ -5,20 +5,27 @@
 'use strict';
 import React, {
   AppRegistry,
-  Component
+  Component,
+  PropTypes,
+  View
 } from 'react-native';
 
 var StaffjoyHome = require('./StaffjoyHome');
 
 class StaffjoyMobile extends Component {
 
+  static get propTypes() {
+    return {
+      ...View.propTypes,
+
+      baseURL: PropTypes.string
+    }
+  }
+
   render() {
 
-    var baseUrl = this.props.baseUrl || 'https://www.staffjoy.com';
-    baseUrl = baseUrl.replace(/\/?$/, ''); // remove trailing slash
-
     return (
-      <StaffjoyHome source={baseUrl} />
+      <StaffjoyHome baseURL={this.props.baseURL} />
     );
   }
 }
