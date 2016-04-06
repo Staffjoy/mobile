@@ -8,7 +8,7 @@ import React, {
   Component
 } from 'react-native';
 
-var StaffjoyHome = require('./StaffjoyHome');
+import StaffjoyHome from './js/StaffjoyHome';
 
 class StaffjoyMobile extends Component {
 
