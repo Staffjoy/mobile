@@ -12,6 +12,7 @@ import React, {
 import WebViewNavBar from './WebViewNavBar';
 import ErrorView from './ErrorView';
 
+let DOMAIN_PATTERN = /^https?\:\/\/(?:www\.)?([^\/?#]+)(?:[\/?#]|$)/i;
 let WEBVIEW_REF = 'webview';
 let CUSTOM_HEADERS = {'X-Staffjoy-Native': Platform.OS};
 
@@ -28,6 +29,7 @@ var WebViewWrapper = React.createClass({
 
     return {
       baseURL: this.props.baseURL,
+      originalDomain: this.props.baseURL.match(DOMAIN_PATTERN)[1],
       lastURL: '',
       domain: '',
       showNav: false,
@@ -77,16 +79,16 @@ var WebViewWrapper = React.createClass({
     this.setupNavBarSlideAnimation();
 
     // extract domain name
-    let matches = navState.url && navState.url.match(/^https?\:\/\/(?:www\.)?([^\/?#]+)(?:[\/?#]|$)/i);
+    let matches = navState.url && navState.url.match(DOMAIN_PATTERN);
     let domain = matches ? matches[1] : '';
 
-    let isOnOriginDomain = (navState.url.indexOf(this.state.baseURL) != -1);
+    let isOnOriginDomain = (navState.url.indexOf(this.state.originalDomain) != -1);
 
     this.setState({
       lastURL: navState.url,
       showNav: !isOnOriginDomain,
-      domain: (isOnOriginDomain ? '' : domain),
-      canGoBack: navState.canGoBack && !navState.loading,
+      domain: domain,
+      canGoBack: !navState.loading, // always allow going back since this shouldn't show on orignal site
       canGoForward: navState.canGoForward && !navState.loading
     });
   },
@@ -121,11 +123,9 @@ var WebViewWrapper = React.createClass({
 
 var styles = StyleSheet.create({
   container: {
-    paddingTop: Platform.OS === 'ios' ? 20 : 0,
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'stretch',
+    paddingTop: Platform.OS === 'ios' ? 20 : 0,
     backgroundColor: 'white',
   },
   web: {
