@@ -88,7 +88,7 @@ var WebViewWrapper = React.createClass({
       lastURL: navState.url,
       showNav: !isOnOriginDomain,
       domain: domain,
-      canGoBack: !navState.loading, // always allow going back since this shouldn't show on orignal site
+      canGoBack: true, // always allow going back since this shouldn't show on orignal site
       canGoForward: navState.canGoForward && !navState.loading
     });
   },
