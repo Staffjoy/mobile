@@ -1,9 +1,9 @@
-# Staffjoy Mobile Apps for Android and iPhone
+# Staffjoy V1 Mobile Apps for Android and iPhone
 
 [![Moonlight](https://img.shields.io/badge/contractors-1-brightgreen.svg)](https://moonlightwork.com/staffjoy)
 
 
-[Staffjoy is shutting down](https://blog.staffjoy.com/staffjoy-is-shutting-down-39f7b5d66ef6#.ldsdqb1kp), so we are open-sourcing our code. These applications use [React Native]() to create a simple webview around [Staffjoy V1's applications](). The mobile applications look for a `mobile-config.json` on the server, which provides a regex for determining which URLs are considered the "app, which hides a navbar with the URL and back button. The repos also includes some other functionality, such as a loading screen and error handling. Thanks to [@JBaller](https://github.com/jballer) for helping us with this last year in his spare time. 
+[Staffjoy is shutting down](https://blog.staffjoy.com/staffjoy-is-shutting-down-39f7b5d66ef6#.ldsdqb1kp), so we are open-sourcing our code. These applications use [React Native](https://facebook.github.io/react-native/) to create a simple webview around [Staffjoy V1's applications](https://github.com/staffjoy/suite). The mobile applications look for a `mobile-config.json` on the server, which provides a regex for determining which URLs are considered the "app, which hides a navbar with the URL and back button. The repos also includes some other functionality, such as a loading screen and error handling. Thanks to [@JBaller](https://github.com/jballer) for helping us with this last year in his spare time. 
 
 ### Example /mobile-config.json
 
