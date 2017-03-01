@@ -1,12 +1,26 @@
-Background
-----------
+# Staffjoy Mobile Apps for Android and iPhone
+
+[![Moonlight](https://img.shields.io/badge/contractors-1-brightgreen.svg)](https://moonlightwork.com/staffjoy)
+
+
+[Staffjoy is shutting down](https://blog.staffjoy.com/staffjoy-is-shutting-down-39f7b5d66ef6#.ldsdqb1kp), so we are open-sourcing our code. These applications use [React Native]() to create a simple webview around [Staffjoy V1's applications](). The mobile applications look for a `mobile-config.json` on the server, which provides a regex for determining which URLs are considered the "app, which hides a navbar with the URL and back button. The repos also includes some other functionality, such as a loading screen and error handling. Thanks to [@JBaller](https://github.com/jballer) for helping us with this last year in his spare time. 
+
+### Example /mobile-config.json
+
+```
+{
+    hideNavForURLsMatchingPattern: "^https?://(dev|stage|www|suite)\.staffjoy\.com"
+}
+```
+
+
+## Background
 
 React Native is packaged as a Node module, delivered via `npm`.
 
 The native projects live in subdirectories, and link to React Native as a local dependency (`npm` puts it into `node_modules/react-native`).
 
-Setup
------
+## Setup
 
 1. Install [Homebrew](http://brew.sh/)
 1. Install Node (using nvm)
@@ -16,19 +30,18 @@ Setup
 1. Install the React Native command line tools
 	a. `npm install -g react-native-cli`
 
-IDEs
-----
+## IDEs
+
 IDE installations will handle SDK dependencies
 
-###iOS
+### iOS
 - Install [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) (v7.3 or newer)
 - Install Cocoapods (`gem install cocoapods`)
 
-###Android
+### Android
 Install [Android Studio](developer.android.com/sdk) 2.0 or newer
 
-Updating Dependencies
-------------
+## Updating Dependencies
 
 **React**: run `npm install` from the project root
 
@@ -39,8 +52,8 @@ Updating Dependencies
 **Android**: updated dynamically during the build process
 
 
-Debug & Build
--------------
+## Debug & Build
+
 > Note: For iOS, because we're using Cocoapods, you **must open the *workspace*** file, (`StaffjoyMobile.xcworkspace`), *not* the project file (`.xcodeproj`).
 
 ### Debugging
